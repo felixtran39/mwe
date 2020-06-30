@@ -2,8 +2,7 @@ apiVersion: skaffold/v2beta4
 build:
   artifacts:
   - image: gcr.io/yuwenma-gke-playground/demo-backend
-    kaniko:
-      cache: {}
+    kaniko: {}
   cluster:
     namespace: pl
     serviceAccount: tranf-ksa
