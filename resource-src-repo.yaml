@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: src-repo
+  namespace: 'pl' # {"type":"string","x-kustomize":{"setter":{"name":"namespace","value":"pl"}}}
+spec:
+  type: git
+  params:
+  - name: revision
+    value: master
+  - name: url
+    value: 'https://github.com/felixtran39/mwe' # {"type":"string","x-kustomize":{"setter":{"name":"src_repo","value":"https://github.com/felixtran39/ci"}}}
+

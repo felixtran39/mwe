@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TaskRun
+metadata:
+  name: run
+  namespace: "pl"
+spec:
+  taskRef:
+    name: build-and-push
+  resources:
+    inputs:
+    - name: src-repo
+      resourceRef:
+        name: src-repo

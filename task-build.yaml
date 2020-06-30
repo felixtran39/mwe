@@ -1,0 +1,28 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: build-and-push
+  namespace: "pl" # {"type":"string","x-kustomize":{"setter":{"name":"namespace","value":"pl"}}}
+spec:
+  resources:
+    inputs:
+    - name: src-repo
+      type: git
+  steps:
+  - name: build-and-push
+    image: gcr.io/k8s-skaffold/skaffold:v1.11.0
+    workingDir: /workspace/src-repo
+    command:
+    - skaffold
+    args:
+    - build
+    env:
+    - name: GOOGLE_APPLICATION_CREDENTIALS
+      value: /secret/kaniko-secret.json
+    volumeMounts:
+    - name: kaniko-secret
+      mountPath: /secret
+  volumes:
+  - name: kaniko-secret
+    secret:
+      secretName: kaniko-secret # {"type":"string","x-kustomize":{"setter":{"name":"gsa-key-file","value":"kaniko-secret"}}}
