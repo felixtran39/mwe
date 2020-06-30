@@ -5,7 +5,7 @@ build:
     kaniko: {}
   cluster:
     namespace: pl
-    serviceAccount: pl:tranf-ksa
+    serviceAccount: default
 kind: Config
 metadata:
   name: backend-config
