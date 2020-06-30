@@ -2,7 +2,7 @@ apiVersion: skaffold/v2beta5
 build:
   artifacts:
   - image: gcr.io/yuwenma-gke-playground/demo-backend
-    kaniko: {}
+    context: /workspace/src-repo
   cluster:
     namespace: pl
 kind: Config
