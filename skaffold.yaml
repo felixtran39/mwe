@@ -2,11 +2,8 @@ apiVersion: skaffold/v2beta4
 build:
   artifacts:
   - image: gcr.io/yuwenma-gke-playground/demo-backend
-    kaniko:
-      cache: {}
-  cluster:
-    namespace: pl
-    serviceAccount: tranf-ksa
+  googleCloudBuild:
+    projectId: yuwenma-gke-playground
 kind: Config
 metadata:
   name: backend-config
