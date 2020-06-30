@@ -4,6 +4,7 @@ build:
   - image: gcr.io/yuwenma-gke-playground/demo-backend
     context: /workspace/src-repo
   cluster:
+    pullSecretPath: kaniko-secret.json
     namespace: pl
 kind: Config
 metadata:
