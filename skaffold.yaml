@@ -5,6 +5,7 @@ build:
     kaniko: {}
   cluster:
     namespace: pl
+    pullSecretPath: kaniko-secret.json
 kind: Config
 metadata:
   name: backend-config
