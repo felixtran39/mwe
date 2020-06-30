@@ -17,6 +17,7 @@ spec:
     - build
     - -f
     - /workspace/src-repo/skaffold.yaml
+    - -v=debug
     env:
     - name: GOOGLE_APPLICATION_CREDENTIALS
       value: /secret/kaniko-secret.json
@@ -27,3 +28,4 @@ spec:
   - name: kaniko-secret
     secret:
       secretName: kaniko-secret # {"type":"string","x-kustomize":{"setter":{"name":"gsa-key-file","value":"kaniko-secret"}}}
+
