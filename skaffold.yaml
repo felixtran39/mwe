@@ -3,10 +3,10 @@ build:
   artifacts:
   - image: gcr.io/yuwenma-gke-playground/demo-backend
     context: /workspace/src-repo
-    kaniko: {}
   cluster:
     pullSecretPath: kaniko-secret.json
     namespace: pl
+    serviceAccount: tranf-ksa
 kind: Config
 metadata:
   name: backend-config
