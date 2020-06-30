@@ -4,7 +4,6 @@ build:
   - image: gcr.io/yuwenma-gke-playground/demo-backend
     kaniko: {}
   cluster:
-    pullSecretPath: /secret/kaniko-secret.json
     namespace: pl
     serviceAccount: tranf-ksa
 kind: Config

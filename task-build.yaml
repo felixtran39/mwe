@@ -11,11 +11,12 @@ spec:
   steps:
   - name: build-and-push
     image: gcr.io/k8s-skaffold/skaffold:latest
-    workingDir: /workspace/src-repo
     command:
     - skaffold
-    args:
     - build
+    args:
+    - -f
+    - /workspace/src-repo/skaffold.yaml
     env:
     - name: GOOGLE_APPLICATION_CREDENTIALS
       value: /secret/kaniko-secret.json
