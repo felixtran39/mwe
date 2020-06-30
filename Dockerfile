@@ -1,5 +1,4 @@
-# FROM golang:1.12.9-alpine3.10 as builder
-FROM oraclelinux:7
+FROM golang:1.12.9-alpine3.10 as builder
 COPY main.go .
 RUN go build -o /app main.go
 
