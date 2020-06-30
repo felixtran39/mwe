@@ -2,13 +2,11 @@ apiVersion: skaffold/v2beta5
 build:
   artifacts:
   - image: gcr.io/yuwenma-gke-playground/demo-backend
-    #context: /workspace/src-repo
-    #kaniko: {}
-    #cluster:
-    #pullSecretPath: kaniko-secret.json
-    #namespace: pl
-  googleCloudBuild:
-    projectId: yuwenma-gke-playground
+    context: /workspace/src-repo
+    kaniko: {}
+  cluster:
+    pullSecretPath: kaniko-secret.json
+    namespace: pl
 kind: Config
 metadata:
   name: backend-config
