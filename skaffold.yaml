@@ -6,6 +6,7 @@ build:
   cluster:
     namespace: pl
     serviceAccount: tranf-ksa
+    pullSecretPath: /secret/kaniko-secret.json
 kind: Config
 metadata:
   name: backend-config

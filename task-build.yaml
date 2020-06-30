@@ -10,7 +10,7 @@ spec:
       type: git
   steps:
   - name: build-and-push
-    image: gcr.io/k8s-skaffold/skaffold:v1.20.0
+    image: gcr.io/k8s-skaffold/skaffold:latest
     workingDir: /workspace/src-repo
     command:
     - skaffold
